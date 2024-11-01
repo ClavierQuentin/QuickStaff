@@ -1,6 +1,12 @@
-﻿services:
+﻿# docker-compose.yml
+services:
   quickstaff.api:
     image: quickstaff.api
     build:
       context: .
       dockerfile: QuickStaff.API/Dockerfile
+    ports:
+      - "5282:80"
+      - "7115:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

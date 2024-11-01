@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickStaff.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09b2eab63349e831efd9dd686743a2d81306a0b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+607f154595d0840b216125e9f6bc426202ebe519")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickStaff.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuickStaff.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

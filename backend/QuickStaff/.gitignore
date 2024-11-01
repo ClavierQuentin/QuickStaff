@@ -75,3 +75,4 @@ TestResults/
 !**/[Pp]ackages/build/
 *.nuget.props
 *.nuget.targets
+

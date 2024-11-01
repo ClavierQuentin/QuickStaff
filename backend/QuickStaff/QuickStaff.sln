@@ -1,17 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStaff.Core", "QuickStaff.Core\QuickStaff.Core.csproj", "{A35B3775-5BAA-4B45-90C1-93D05C0E2144}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickStaff.Core", "QuickStaff.Core\QuickStaff.Core.csproj", "{A35B3775-5BAA-4B45-90C1-93D05C0E2144}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStaff.Service", "QuickStaff.Service\QuickStaff.Service.csproj", "{3130BFAA-0AAD-45DB-8D02-7B53D90B6999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickStaff.Service", "QuickStaff.Service\QuickStaff.Service.csproj", "{3130BFAA-0AAD-45DB-8D02-7B53D90B6999}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStaff.API", "QuickStaff.API\QuickStaff.API.csproj", "{F20F7A3B-88EA-409E-AFB1-964980529A16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickStaff.API", "QuickStaff.API\QuickStaff.API.csproj", "{F20F7A3B-88EA-409E-AFB1-964980529A16}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAD63DD7-EC3A-4F2B-84DD-14697386EB8D}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStaff.Tests", "QuickStaff.Tests\QuickStaff.Tests.csproj", "{50528CFC-0D4F-451B-9FB3-9B9DCB4A4B6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickStaff.Tests", "QuickStaff.Tests\QuickStaff.Tests.csproj", "{50528CFC-0D4F-451B-9FB3-9B9DCB4A4B6C}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FB9A78F8-DA90-4445-A601-5A2BFC2D0C5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,5 +41,12 @@ Global
 		{50528CFC-0D4F-451B-9FB3-9B9DCB4A4B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50528CFC-0D4F-451B-9FB3-9B9DCB4A4B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50528CFC-0D4F-451B-9FB3-9B9DCB4A4B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9A78F8-DA90-4445-A601-5A2BFC2D0C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9A78F8-DA90-4445-A601-5A2BFC2D0C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9A78F8-DA90-4445-A601-5A2BFC2D0C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9A78F8-DA90-4445-A601-5A2BFC2D0C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

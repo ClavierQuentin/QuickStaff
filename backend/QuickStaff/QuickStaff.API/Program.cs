@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.OData;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-builder.Services.AddControllers(); // Ceci est nécessaire pour les API controllers!
+builder.Services.AddControllers().AddOData();
+// Ceci est nécessaire pour les API controllers!
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -24,7 +27,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        options.RoutePrefix = string.Empty; // Ceci fait que Swagger s'ouvre à la racine
+    });
+    
 }
 
 app.UseHttpsRedirection();
