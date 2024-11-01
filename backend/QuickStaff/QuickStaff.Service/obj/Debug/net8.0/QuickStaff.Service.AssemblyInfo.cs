@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuickStaff.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a217b0555ff4492e3cc940029c36d264f9596ee2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09b2eab63349e831efd9dd686743a2d81306a0b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuickStaff.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuickStaff.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

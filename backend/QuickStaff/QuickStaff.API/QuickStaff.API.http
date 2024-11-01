@@ -1,6 +1,6 @@
 @QuickStaff.API_HostAddress = http://localhost:5282
 
-GET {{QuickStaff.API_HostAddress}}/weatherforecast/
+GET {{QuickStaff.API_HostAddress}}/api/HealthCheck
 Accept: application/json
 
 ###
