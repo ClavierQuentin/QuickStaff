@@ -1,0 +1,6 @@
+﻿services:
+  quickstaff.api:
+    image: quickstaff.api
+    build:
+      context: .
+      dockerfile: QuickStaff.API/Dockerfile
