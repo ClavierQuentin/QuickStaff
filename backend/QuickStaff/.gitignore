@@ -76,3 +76,10 @@ TestResults/
 *.nuget.props
 *.nuget.targets
 
+# .NET cache files
+*.cache
+.cache/
+*.GeneratedMSBuildEditorConfig.editorconfig
+*.AssemblyReference.cache
+*.AssemblyInfo.cache
+*.CopyComplete
