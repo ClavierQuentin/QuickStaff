@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.OData;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-builder.Services.AddControllers().AddOData();
+builder.Services.AddControllers().AddOData(
+    options => options.Select().Filter().OrderBy().Expand().Count().SetMaxTop(null));
 // Ceci est nécessaire pour les API controllers!
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -41,7 +42,7 @@ app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
 app.UseAuthorization(); // Important pour la sécurité future
-
-app.MapControllers();
+app.UseRouting();
+app.UseEndpoints(endpoints => endpoints.MapControllers());
 
 app.Run();

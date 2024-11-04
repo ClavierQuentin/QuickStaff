@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace QuickStaff.API.Controllers;
@@ -8,6 +9,7 @@ namespace QuickStaff.API.Controllers;
 public class HealthCheckController : ODataController
 {
     [HttpGet]
+    [EnableQuery]
     public IActionResult Get()
     {
         return Ok(new { status = "healthy", timestamp = DateTime.UtcNow });
