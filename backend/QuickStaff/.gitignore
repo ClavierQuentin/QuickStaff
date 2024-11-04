@@ -83,3 +83,18 @@ TestResults/
 *.AssemblyReference.cache
 *.AssemblyInfo.cache
 *.CopyComplete
+
+# .NET specific debug/build outputs
+**/obj/**/*.cache
+**/obj/Debug/**
+**/obj/Debug/net8.0/**
+**/obj/**/.NETCore*/**
+**/obj/**/net8*/**
+**/QuickStaff.API/obj/**
+**/QuickStaff.Core/obj/**
+**/QuickStaff.Service/obj/**
+**/QuickStaff.Tests/obj/**
+
+# Plus spécifiquement pour votre structure
+backend/**/obj/**
+backend/QuickStaff/**/obj/**
