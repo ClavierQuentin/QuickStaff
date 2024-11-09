@@ -1,12 +1,77 @@
-version: '3.4'
+version: '3.8'
 
 services:
-  quickstaff.api:
+  api:
+    build:
+      context: .
+      dockerfile: QuickStaff.API/Dockerfile
+    container_name: quickstaff-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=quickstaff;Username=quickstaff_user;Password=quickstaff_password
+      - Redis__ConnectionString=redis:6379
     ports:
-      - "80"
-      - "443"
+      - "5000:80"
+    networks:
+      - quickstaff-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: quickstaff-db
+    environment:
+      POSTGRES_DB: quickstaff
+      POSTGRES_USER: quickstaff_user
+      POSTGRES_PASSWORD: quickstaff_password
+      PGDATA: /data/postgres
     volumes:
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - postgres-data:/data/postgres
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    networks:
+      - quickstaff-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quickstaff_user -d quickstaff"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: quickstaff-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@quickstaff.local
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - quickstaff-network
+    depends_on:
+      - postgres
+
+  redis:
+    image: redis:7-alpine
+    container_name: quickstaff-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - quickstaff-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres-data:
+
+networks:
+  quickstaff-network:
+    driver: bridge
+

@@ -11,7 +11,7 @@ WORKDIR /src
 # Copier les fichiers projet et restore les dépendances
 COPY ["QuickStaff.API/QuickStaff.API.csproj", "QuickStaff.API/"]
 COPY ["QuickStaff.Core/QuickStaff.Core.csproj", "QuickStaff.Core/"]
-COPY ["QuickStaff.Infrastructure/QuickStaff.Infrastructure.csproj", "QuickStaff.Infrastructure/"]
+COPY ["QuickStaff.Service/QuickStaff.Service.csproj", "QuickStaff.Service/"]
 RUN dotnet restore "QuickStaff.API/QuickStaff.API.csproj"
 
 # Copier le reste du code
